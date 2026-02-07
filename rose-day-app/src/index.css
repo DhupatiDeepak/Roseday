@@ -1,0 +1,89 @@
+/* Global Styles & Romantic Theme */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --color-bg-start: #FFD6E8;
+  --color-bg-end: #FFC0CB;
+  --color-card-bg: #FFF0F5;
+  --color-primary: #FF4D88;
+  --color-primary-hover: #FF2E74;
+  --color-text-dark: #C2185B;
+  --color-heart: #FF5C8A;
+  --color-text-body: #880E4F;
+
+  /* Spacing & Radius */
+  --card-radius: 24px;
+  --btn-radius: 50px;
+  --card-shadow: 0 10px 30px rgba(255, 77, 136, 0.2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(180deg, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+  color: var(--color-text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  /* Prevent scroll from floating hearts */
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Dancing Script', cursive;
+  color: var(--color-text-dark);
+  margin: 0;
+  font-weight: 700;
+}
+
+button {
+  border: none;
+  font-family: 'Quicksand', sans-serif;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 46, 116, 0.4);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  :root {
+    --card-radius: 20px;
+    --btn-radius: 40px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-wrapper {
+    padding: 1.5rem !important;
+    width: 95% !important;
+  }
+
+  button {
+    padding: 10px 24px !important;
+    font-size: 1rem !important;
+  }
+}

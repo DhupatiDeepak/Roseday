@@ -23,58 +23,43 @@ const MemoriesCard = ({ onNext }) => {
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '0', // No gap
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '15px',
                 width: '100%',
                 marginBottom: '2rem',
-                borderRadius: '12px', // Apply radius to container
-                overflow: 'hidden'    // Clip content
+                paddingRight: '0'
             }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0', height: '100%' }}>
-                    {smallImages.map((src, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                            whileHover={{ scale: 1.1, zIndex: 10, transition: { duration: 0.2 } }}
-                            style={{
-                                flex: 1, // Allow images to fill available height evenly
-                                overflow: 'hidden',
-                                position: 'relative', // Ensure relative positioning
-                                cursor: 'pointer'
-                            }}
-                        >
-                            <img
-                                src={src}
-                                alt={`Memory ${idx + 1}`}
-                                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', top: 0, left: 0 }}
-                            />
-                        </motion.div>
-                    ))}
-                </div>
-                <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 }}
-                    whileHover={{ scale: 1.05, zIndex: 10 }}
-                    style={{
-                        height: '100%',
-                        minHeight: '240px', // Minimum height for the card
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        overflow: 'hidden',
-                        position: 'relative',
-                        cursor: 'pointer'
-                    }}
-                >
-                    <img
-                        src={tallImage}
-                        alt="Tall Memory"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', top: 0, left: 0 }}
-                    />
-                </motion.div>
+                {[...smallImages, tallImage].slice(0, 4).map((src, idx) => ( // Show first 4 images in grid
+                    <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{
+                            delay: idx * 0.15,
+                            type: "spring",
+                            stiffness: 100
+                        }}
+                        whileHover={{
+                            scale: 1.05,
+                            zIndex: 10,
+                            boxShadow: "0 10px 20px rgba(0,0,0,0.2)"
+                        }}
+                        style={{
+                            borderRadius: '12px',
+                            overflow: 'hidden',
+                            width: '100%',
+                            height: '220px', // Fixed height for uniformity
+                            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        <img
+                            src={src}
+                            alt={`Memory ${idx + 1}`}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        />
+                    </motion.div>
+                ))}
             </div>
 
             <motion.button

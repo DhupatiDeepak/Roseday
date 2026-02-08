@@ -19,7 +19,7 @@ const tallImage = img5;
 const MemoriesCard = ({ onNext }) => {
     return (
         <CardWrapper>
-            <h2 style={{ marginBottom: '1.5rem' }}>Our Beautiful Memories</h2>
+            <h2 style={{ marginBottom: '1.5rem', color: 'var(--color-text-dark)' }}>Our Beautiful Memories</h2>
 
             <div style={{
                 display: 'grid',

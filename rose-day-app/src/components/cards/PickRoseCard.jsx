@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 const PickRoseCard = ({ onNext }) => {
     return (
         <CardWrapper>
-            <h2 style={{ marginBottom: '0.5rem' }}>Pick a Rose</h2>
-            <p style={{ marginBottom: '2.5rem', opacity: 0.7 }}>Find the hidden message...</p>
+            <h2 style={{ marginBottom: '0.5rem', color: 'var(--color-text-dark)' }}>Pick a Rose</h2>
+            <p style={{ marginBottom: '2.5rem', opacity: 0.8, color: 'var(--color-text-body)' }}>Find the hidden message...</p>
 
             <div style={{ display: 'flex', gap: '30px', justifyContent: 'center', marginBottom: '2rem' }}>
                 {[1, 2, 3].map((i) => (

@@ -13,7 +13,7 @@ const galleryImages = [img2, img3, img4, img5];
 const MemoriesCard2 = ({ onNext }) => {
     return (
         <CardWrapper>
-            <h2 style={{ marginBottom: '1.5rem' }}>More Special Moments...</h2>
+            <h2 style={{ marginBottom: '1.5rem', color: 'var(--color-text-dark)' }}>More Special Moments...</h2>
 
             <div style={{
                 display: 'grid',

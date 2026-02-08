@@ -2,19 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette */
+  /* DARK MODE (Default) Palette - High Contrast, Neon, Premium */
+  --color-bg-start: #0f0c29;
+  --color-bg-end: #302b63;
+  --color-card-bg: rgba(20, 20, 40, 0.7);
+  /* Glassy Dark */
+  --color-primary: #ff0055;
+  /* Neon Pink */
+  --color-primary-hover: #ff3377;
+  --color-text-dark: #ff8fab;
+  /* Soft Pink Text for Headings */
+  --color-heart: #ff0055;
+  --color-text-body: #e0e0e0;
+  /* Light Gray for readability */
+  --card-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Spacing & Radius */
+  --card-radius: 24px;
+  --btn-radius: 50px;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+/* LIGHT MODE Palette - Soft, Romantic, Original */
+body.light-mode {
   --color-bg-start: #FFD6E8;
   --color-bg-end: #FFC0CB;
-  --color-card-bg: #FFF0F5;
+  --color-card-bg: rgba(255, 240, 245, 0.85);
+  /* Glassy Light */
   --color-primary: #FF4D88;
   --color-primary-hover: #FF2E74;
   --color-text-dark: #C2185B;
   --color-heart: #FF5C8A;
   --color-text-body: #880E4F;
-
-  /* Spacing & Radius */
-  --card-radius: 24px;
-  --btn-radius: 50px;
+  --card-border: 1px solid rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   --card-shadow: 0 10px 30px rgba(255, 77, 136, 0.2);
 }
 
@@ -29,6 +54,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
   /* Prevent scroll from floating hearts */
 }
 
@@ -39,6 +65,7 @@ h3 {
   color: var(--color-text-dark);
   margin: 0;
   font-weight: 700;
+  transition: color var(--transition-speed) ease;
 }
 
 button {
@@ -47,12 +74,13 @@ button {
   cursor: pointer;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   color: white;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 46, 116, 0.4);
+  box-shadow: 0 0 20px var(--color-primary);
+  /* Enhanced Glow */
 }
 
 button:active {

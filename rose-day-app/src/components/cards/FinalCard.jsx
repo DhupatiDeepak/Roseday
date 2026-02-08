@@ -16,10 +16,10 @@ const FinalCard = ({ onReplay }) => {
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 style={{
                     marginBottom: '1.5rem',
-                    fontSize: '2.8rem',
+                    fontSize: '3rem', // Larger for impact
                     fontFamily: "'Dancing Script', cursive",
-                    color: '#ff4d88',
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.1)'
+                    color: 'var(--color-text-dark)', // Theme variable
+                    textShadow: '0 0 10px rgba(255, 77, 136, 0.6)' // Neon glow in dark mode
                 }}
             >
                 I Love You baby!

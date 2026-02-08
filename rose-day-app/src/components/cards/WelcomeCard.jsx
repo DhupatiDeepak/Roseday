@@ -46,9 +46,10 @@ const WelcomeCard = ({ onNext }) => {
                 transition={{ delay: 0.3 }}
                 style={{
                     fontFamily: "'Dancing Script', cursive",
-                    fontSize: '2.5rem',
-                    color: '#d4145a',
-                    marginBottom: '0.5rem'
+                    fontSize: '3rem',
+                    color: 'var(--color-text-dark)', // Use theme variable
+                    marginBottom: '0.5rem',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
                 }}
             >
                 Happy Rose Day baby!
@@ -61,7 +62,7 @@ const WelcomeCard = ({ onNext }) => {
                 style={{
                     margin: '0 0 2rem',
                     fontSize: '1.2rem',
-                    color: '#666',
+                    color: 'var(--color-text-body)', // Use theme variable
                     fontFamily: "'Quicksand', sans-serif"
                 }}
             >

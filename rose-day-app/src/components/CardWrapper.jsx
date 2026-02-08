@@ -10,10 +10,12 @@ const CardWrapper = ({ children, className = '' }) => {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className={`card-wrapper ${className}`}
             style={{
-                background: 'rgba(255, 240, 245, 0.95)', // LavenderBlush + transparency
-                backdropFilter: 'blur(10px)',
+                background: 'var(--color-card-bg)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
                 borderRadius: 'var(--card-radius)',
-                boxShadow: 'var(--card-shadow)',
+                boxShadow: 'var(--glass-shadow)',
+                border: 'var(--card-border)',
                 padding: '2rem',
                 maxWidth: '600px',
                 width: '90%', // Responsive width
@@ -24,6 +26,8 @@ const CardWrapper = ({ children, className = '' }) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
+                color: 'var(--color-text-body)',
+                transition: 'background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease',
             }}
         >
             {children}
